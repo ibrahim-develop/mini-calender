@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="celender.css">
+    <title>Mini Celender</title>
+</head>
+<body>
+   
+    <div class="hero">
+       <h1 id="tittle">Celender</h1> 
+        <div class="celender">
+            <div class="left">
+                <p id="date">01</p>
+                <p id="day">monday</p>
+            </div>
+            <div class="right">
+                <p id="month">may</p>
+                <p id="year">2024</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const date = document.getElementById("date");
+        const day = document.getElementById("day");
+        const month = document.getElementById("month");
+        const year = document.getElementById("year");
+        
+        const today = new Date();
+        const weekdays = ["sunday","Monday","Tuesday","wednesday","Thursday",
+        "Friday","Saturday"];
+        const Allmonth = ["Junuarary","Feburary","March","April","May","June","July"
+        ,"August","September","October","November","December"
+        ];
+
+        date.innerHTML =(today.getDate()<10?"0":"")+today.getDate();
+        day.innerHTML = weekdays[today.getDay()];
+        month.innerHTML = Allmonth[today.getMonth()];
+        year.innerHTML = today.getFullyear();
+
+    </script>
+</body> 
+</html>
